@@ -46,7 +46,10 @@ def hello_world():
             sorted_games.sort(key=lambda game: game.wishlist_priority)
 
             total_demos = sum([1 for game in sorted_games if game.demo_appid])
-            return render_template("wishlist.html", game_list=sorted_games, total_demos=total_demos)
+            return render_template("wishlist.html",
+                                   game_list=sorted_games,
+                                   total_demos=total_demos,
+                                   steam_id=steam_id)
         except Exception as e:
             print(f"Something went wrong for steam ID {steam_id}: {e}")
             return render_template(

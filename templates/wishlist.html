@@ -15,10 +15,12 @@
         });
     </script>
 
-    <h1>Wishlist</h1>
-    <h3>(games/demos: {{ game_list | length }} / {{ total_demos }})</h3>
+    <h1 class="ui header centered">Wishlist</h1>
+    <h3 class="ui header centered">Games/demos: {{ game_list | length }} / {{ total_demos }}</h3>
 
-    <table id="wishlist-table" class="ui celled table">
+    <h4 class="ui header centered">(go to: <a href="https://store.steampowered.com/wishlist/profiles/{{steam_id}}">Steam wishlist</a> | <a href="https://steamcommunity.com/profiles/{{steam_id}}">Steam profile</a>)</h4>
+
+    <table id="wishlist-table" class="ui compact  table" style="width:100%">
         <thead>
             <tr>
                 <td>No.</td>

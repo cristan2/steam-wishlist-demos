@@ -57,6 +57,7 @@ img.page-logo {
 
 .site-inner {
     min-width: 50%;
+    max-width: 65%;
     padding-top: 1em;
 }
 
@@ -71,8 +72,8 @@ img.page-logo {
 /* --- Override semantic.ui --- */
 
 header {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     /*min-height: 100%;*/
 }
 
@@ -82,6 +83,7 @@ body {
     min-height: 100%;
 }
 
-body > .grid {
-  height: 100%;
+.site-inner > .grid {
+  /*height: 100%;*/
+  height: 80%;
 }
