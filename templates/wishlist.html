@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% block title %}Wishlist{% endblock %}
+{% endblock %}
+
+{% block container %}
+
+    <h1>Wishlist</h1>
+    <h3>Total games: {{ game_list | length }}</h3>
+    <h3>Total demos: {{ total_demos }}</h3>
+
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <td style='border-bottom: 1px solid black'>No.</td>
+                <td style='border-bottom: 1px solid black'>Title</td>
+                <td style='border-bottom: 1px solid black'>Demo appid</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for game in game_list %}
+            {% if game.demo_appid %}
+                <tr class="blue">
+            {% else %}
+                <tr>
+            {% endif %}
+                    <td data-label="No.">{{game.wishlist_priority}}</td>
+                    <td data-label="Title" class="selectable"><a href='{{game.url}}'>{{game.title}}</a></td>
+                    <td data-label="Demo appid">{{game.demo_appid}}</td>
+                </tr>
+
+        {% endfor %}
+    </tbody>
+    </table>
+
+{% endblock %}

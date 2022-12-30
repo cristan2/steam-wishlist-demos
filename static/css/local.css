@@ -1,0 +1,87 @@
+.site-inner {
+    max-width: 70%;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.site-header {
+    /*margin-bottom: 1rem;*/
+}
+
+.site-header, footer {
+  /*background-color: rgba( 46, 64, 83, 1);*/
+  background-color: rgba(0, 0, 0, 0.9);
+  background-repeat: repeat;
+  text-align: center;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    color: white;
+}
+
+.site-description {
+    margin-top: 0;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+img.site-logo {
+    /* keep this at a fixed size to avoid resizing of page elements on load */
+    height: 250px;
+    width: 485px;
+}
+
+img.page-logo {
+    /* keep this at a fixed size to avoid resizing of page elements on load */
+    height: 100px;
+    width: 194px;
+}
+
+/* --- Inner pages --- */
+
+.site-header.page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.site-header .page-title {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.site-inner {
+    min-width: 50%;
+    padding-top: 1em;
+}
+
+.site-nav {
+    margin-bottom: 1rem;
+}
+
+.page-nav {
+    margin-bottom: 3rem;
+}
+
+/* --- Override semantic.ui --- */
+
+header {
+    display: flex;
+    flex-direction: column;
+    /*min-height: 100%;*/
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+body > .grid {
+  height: 100%;
+}

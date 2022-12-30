@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- jquery needs to be loaded before semantic ui -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.0/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.0/semantic.min.js"></script>
+    <link rel="stylesheet" href="/static/css/local.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/dt-1.13.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/se/dt-1.13.1/datatables.min.js"></script>
+
+
+</head>
+
+<!--header class="site-header base page">
+    <div class="page-title">
+        {% block header %}{% endblock %}
+        <p class="page-subtitle">{% block subheader %}{% endblock %}</p>
+    </div>
+</header-->
+
+<body>
+    <div class="site-inner centered">
+        {% block container %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>Footer text</p>
+    </footer>
+</body>
+
+</html>

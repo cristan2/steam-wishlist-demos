@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% block title %}Wishlist{% endblock %}
+{% endblock %}
+
+{% block container %}
+
+    <script>
+        $(document).ready(function() {
+            $('.message .close')
+              .on('click', function() {
+                $(this)
+                  .closest('.message')
+                  .transition('fade')
+                ;
+              })
+            ;
+        });
+    </script>
+
+    {% if error_message %}
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                Error
+            </div>
+            <p>{{error_message}}</p>
+        </div>
+    {% endif %}
+
+
+<div class="ui middle aligned one column centered grid">
+    <h1 class="row">Enter your SteamID</h1>
+    <div>If you don't know your SteamID, use a site such as <a href="https://www.steamidfinder.com/"> Steam ID Finder </a> or follow the instructions in the <a href="https://help.steampowered.com/en/faqs/view/2816-BE67-5B69-0FEC"> Steam FAQ.</a></div>
+    <div class="row">
+
+        <div class="ui segment">
+            <form class="ui form " action="/" method="POST">
+                <div class="field">
+                    <!--label>Enter your Steam ID</label-->
+                    <input type="number" name="steamid" placeholder="Your Steam ID" required>
+                </div>
+                <button class="ui button" type="submit">Submit</button>
+            </form>
+        </div>
+  </div>
+
+</div>
+
+{% endblock %}
