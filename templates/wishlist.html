@@ -6,11 +6,17 @@
 
 {% block container %}
 
+    <script>
+        $(document).ready(function() {
+            $('#wishlist-table').DataTable();
+        });
+    </script>
+
     <h1>Wishlist</h1>
     <h3>Total games: {{ game_list | length }}</h3>
     <h3>Total demos: {{ total_demos }}</h3>
 
-    <table class="ui celled table">
+    <table id="wishlist-table" class="ui celled table">
         <thead>
             <tr>
                 <td style='border-bottom: 1px solid black'>No.</td>
