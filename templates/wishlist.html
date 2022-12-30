@@ -12,6 +12,14 @@
               "lengthMenu": [50, 100, 200],
               "pageLength": 100
             });
+            $('.message .close')
+              .on('click', function() {
+                $(this)
+                  .closest('.message')
+                  .transition('fade')
+                ;
+              })
+            ;
         });
     </script>
 
@@ -20,7 +28,15 @@
 
     <h4 class="ui header centered">(go to: <a href="https://store.steampowered.com/wishlist/profiles/{{steam_id}}">Steam wishlist</a> | <a href="https://steamcommunity.com/profiles/{{steam_id}}">Steam profile</a>)</h4>
 
-    <table id="wishlist-table" class="ui compact  table" style="width:100%">
+    <div class="ui small olive icon message">
+        <i class="close icon"></i>
+        <i class="info circle icon"></i>
+        <div class="content">
+        Games with demos are shown in <span class="ui blue text">blue</span>. Click on the table headers to sort based on that column. Search for "demo" to show only games with demos.
+            </div>
+    </div>
+
+    <table id="wishlist-table" class="ui compact table" style="width:100%">
         <thead>
             <tr>
                 <td>No.</td>
