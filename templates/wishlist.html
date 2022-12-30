@@ -8,20 +8,22 @@
 
     <script>
         $(document).ready(function() {
-            $('#wishlist-table').DataTable();
+            $('#wishlist-table').DataTable({
+              "lengthMenu": [50, 100, 200],
+              "pageLength": 100
+            });
         });
     </script>
 
     <h1>Wishlist</h1>
-    <h3>Total games: {{ game_list | length }}</h3>
-    <h3>Total demos: {{ total_demos }}</h3>
+    <h3>(games/demos: {{ game_list | length }} / {{ total_demos }})</h3>
 
     <table id="wishlist-table" class="ui celled table">
         <thead>
             <tr>
-                <td style='border-bottom: 1px solid black'>No.</td>
-                <td style='border-bottom: 1px solid black'>Title</td>
-                <td style='border-bottom: 1px solid black'>Demo appid</td>
+                <td>No.</td>
+                <td>Title</td>
+                <td>Demo</td>
             </tr>
         </thead>
     <tbody>
@@ -33,7 +35,11 @@
             {% endif %}
                     <td data-label="No.">{{game.wishlist_priority}}</td>
                     <td data-label="Title" class="selectable"><a href='{{game.url}}'>{{game.title}}</a></td>
-                    <td data-label="Demo appid">{{game.demo_appid}}</td>
+                    <td data-label="Demo">
+                        {% if game.demo_appid %}
+                            <a href="steam://install/{{game.demo_appid}}">Install Demo</a>
+                        {% endif %}
+                    </td>
                 </tr>
 
         {% endfor %}
