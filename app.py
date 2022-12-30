@@ -170,4 +170,5 @@ def _fill_in_demo_appid(games_dict, demo_info_data):
 
 
 if __name__ == '__main__':
-    app.run()
+    # this port must correlate with `internal_port` from fly.toml
+    app.run(port=8080, host='0.0.0.0')
