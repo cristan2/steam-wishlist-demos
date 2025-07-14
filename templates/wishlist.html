@@ -23,10 +23,8 @@
         });
     </script>
 
-    <h1 class="ui header centered">Wishlist</h1>
-    <h3 class="ui header centered">Games/demos: {{ game_list | length }} / {{ total_demos }}</h3>
-
-    <h4 class="ui header centered">(go to: <a href="https://store.steampowered.com/wishlist/profiles/{{steam_id}}">Steam wishlist</a> | <a href="https://steamcommunity.com/profiles/{{steam_id}}">Steam profile</a>)</h4>
+    <h1 class="ui header centered"><a href="https://store.steampowered.com/wishlist/profiles/{{steam_id}}">Wishlist</a> for profile <a href="https://steamcommunity.com/profiles/{{steam_id}}">{{steam_id}}</a></h1>
+    <h3 class="ui header centered">{{ game_list | length }} games with {{ total_demos }} demos</h3>
 
     <div class="ui small olive icon message">
         <i class="close icon"></i>
